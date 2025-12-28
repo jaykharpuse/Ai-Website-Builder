@@ -38,7 +38,6 @@ function CodeView() {
         const result=await convex.query(api.workspace.GetWorkspace,{
             workspaceId:id
         });
-        // Preprocess and validate files before merging
         const processedFiles = preprocessFiles(result?.fileData || {});
         const mergedFiles = {...Lookup.DEFAULT_FILE, ...processedFiles};
         setFiles(mergedFiles);
